@@ -13,7 +13,16 @@ def directors_totals(nds)
   
     row=0
   while row < nds.length
-  hash[nds[row][:name]]=0
+  total=0
+  
+  #ok now I have to figure out how to add up all the values IN THIS ROW
+  rownum=0
+  while rownum< nds[row][:movies].length
+  total+=nds[row][:movies][rownum][:worldwide_gross]
+  rownum+=1
+end
+  
+  hash[nds[row][:name]]=total
   row+=1
   end
   
